@@ -111,8 +111,8 @@ GET /api/v1/search?q=solana
 
 ```bash
 # 1. Clonar repositorio
-git clone https://github.com/tu-usuario/crypto-api.git
-cd crypto-api
+git clone https://github.com/alejatello28-cmd/uide-g1-clase2-api.git
+cd uide-g1-clase2-api
 
 # 2. Crear entorno virtual
 python -m venv venv
@@ -190,6 +190,18 @@ http://localhost:8000/docs
 ---
 
 ## 📸 Screenshots
+<img width="886" height="134" alt="image" src="https://github.com/user-attachments/assets/db60c6ad-d928-4954-8272-5a79ddec134b" />
+<img width="886" height="521" alt="image" src="https://github.com/user-attachments/assets/392f3fb4-e2f8-44c7-a78a-88b7d4642c25" />
+<img width="886" height="500" alt="image" src="https://github.com/user-attachments/assets/7682d020-d151-4955-8a53-7f114151c3de" />
+<img width="886" height="500" alt="image" src="https://github.com/user-attachments/assets/81e0e499-7760-4412-ae71-5187c2708b32" />
+<img width="886" height="515" alt="image" src="https://github.com/user-attachments/assets/d36517e0-991b-44fb-a116-27c03cbdfb4e" />
+<img width="886" height="531" alt="image" src="https://github.com/user-attachments/assets/3b92b3b0-338c-4922-a08d-d9ad27dee86f" />
+
+
+
+
+
+
 
 ### API corriendo localmente
 
