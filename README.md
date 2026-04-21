@@ -197,9 +197,10 @@ http://localhost:8000/docs
 <img width="886" height="515" alt="image" src="https://github.com/user-attachments/assets/d36517e0-991b-44fb-a116-27c03cbdfb4e" />
 <img width="886" height="531" alt="image" src="https://github.com/user-attachments/assets/3b92b3b0-338c-4922-a08d-d9ad27dee86f" />
 
+## 📸 Screenshots de API en POSTMAN
 
-
-
+<img width="886" height="500" alt="image" src="https://github.com/user-attachments/assets/d44c317b-9102-405a-beb3-e08b82aad8b4" />
+<img width="886" height="500" alt="image" src="https://github.com/user-attachments/assets/195f34bf-bf32-468c-aa1b-84cc8ab99c2a" />
 
 
 
