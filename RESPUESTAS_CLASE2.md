@@ -179,3 +179,49 @@ async def get_price(ids: str, currencies: str = "usd"):
 | Uso como proxy gratuito | Costos de infraestructura, sin control de usuarios | Violación de términos de servicio |
 
 **La ausencia de autenticación, rate limiting y caché convierte al endpoint `/coins/price` en el vector de ataque más crítico del sistema**, ya que un atacante puede dejar inoperativa la API completa simplemente enviando peticiones en bucle, sin necesidad de conocimientos avanzados.
+
+---
+INTEGRANTE: Luis Alexander Soto Segovia
+
+## 1) Riesgos de Abuso del Endpoint
+
+### ¿Cómo podría explotarse?
+Un atacante podría automatizar múltiples solicitudes (scripts o bots) enviando peticiones masivas al endpoint, utilizando listas extensas de criptomonedas y monedas, sin ningún tipo de restricción.
+
+### Consecuencias para el sistema:
+- Alto consumo de CPU, memoria y ancho de banda.
+- Saturación del backend.
+- Aumento de latencia para usuarios legítimos.
+- Posible caída del servicio.
+- Bloqueo de la IP del servidor por parte de CoinGecko.
+- Incremento de costos en infraestructura (cloud).
+
+### Consecuencias para CoinGecko:
+- Tráfico abusivo proveniente de su sistema.
+- Consumo indebido de su API pública.
+- Violación de límites o términos de uso.
+- Bloqueo del acceso desde su IP.
+
+### Recomendaciones:
+- Implementar autenticación (API Key, JWT).
+- Aplicar **rate limiting** por IP o usuario.
+- Limitar la cantidad de `ids` y `currencies` por solicitud.
+- Implementar caché para respuestas frecuentes.
+- Monitorear logs y detectar patrones anómalos.
+
+---
+
+## 2) Desventajas del Scraper (Tipo de Información)
+
+- **Información incompleta:** no todas las criptomonedas tienen datos completos.
+- **Datos desactualizados:** los precios pueden cambiar rápidamente.
+- **Dependencia de terceros:** cambios en CoinGecko afectan directamente al sistema.
+- **Datos no verificados:** la calidad depende de la fuente externa.
+- **Limitaciones de uso:** posibles bloqueos por exceso de consultas.
+- **Cambios en el formato:** si la API cambia, el scraper puede fallar.
+- **Cobertura limitada:** no todos los mercados o exchanges están incluidos.
+
+---
+
+## Conclusión
+El endpoint, en su estado actual, representa un riesgo significativo al actuar como proxy abierto. Es fundamental implementar controles de seguridad y optimización para evitar abusos y garantizar la disponibilidad del servicio.
