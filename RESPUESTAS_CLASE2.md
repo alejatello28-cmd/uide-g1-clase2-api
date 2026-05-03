@@ -169,3 +169,13 @@ async def get_price(ids: str, currencies: str = "usd"):
         )
     ...
 ```
+
+### Resumen
+
+| Vector de ataque | Consecuencia en el sistema | Consecuencia en CoinGecko |
+|---|---|---|
+| Peticiones masivas automatizadas | Saturación del servidor, caída del servicio | Rate limit agotado, IP bloqueada |
+| Amplificación con múltiples `ids` | Alto consumo de recursos por petición | Solicitudes costosas reenvíadas |
+| Uso como proxy gratuito | Costos de infraestructura, sin control de usuarios | Violación de términos de servicio |
+
+**La ausencia de autenticación, rate limiting y caché convierte al endpoint `/coins/price` en el vector de ataque más crítico del sistema**, ya que un atacante puede dejar inoperativa la API completa simplemente enviando peticiones en bucle, sin necesidad de conocimientos avanzados.
